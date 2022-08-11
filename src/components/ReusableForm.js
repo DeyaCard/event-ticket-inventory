@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ReusableForm(props) {
+
+  const formStyle = {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center"
+  }
+
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        {/* <label>
-          Pick your ticket:
-          <select value={this.state.value} onChange=
-          {this.handleChange}>
-            <option value="red">Red</option>
-          </select>
-        </label> */}
-        
+        <div style={formStyle}>
         <input
           type='text'
           name='name'
@@ -31,21 +31,24 @@ function ReusableForm(props) {
           min='1'
           name='quantity'
           placeholder='Quantity' />
+                    </div>
+
           <br />
           <br />
         <button style={{
-          "padding": ".5em 1em",
+          "padding": ".6em 3.5em",
           "backgroundColor": "darkblue",
           "color": "white",
           "fontSize": "1.25rem",
           "border": "none",
           "cursor": "pointer",
-          "borderRadius": ".25em"}
+          "borderRadius": "1.25em"}
           } type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
   );
 }
+
 
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,

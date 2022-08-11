@@ -3,6 +3,7 @@ import Event from "./Event";
 import PropTypes from "prop-types";
 
 function EventList(props){
+  
   return (
     <React.Fragment>
       <hr/>

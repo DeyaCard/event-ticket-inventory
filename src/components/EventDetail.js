@@ -10,7 +10,7 @@ function EventDetail(props) {
       <h3>{event.name}</h3>
       <h3>{event.location}</h3>
       <h4>${event.price}</h4>
-      <h4>${event.quantity}</h4>
+      <h4>{event.quantity}</h4>
       <button onClick={ props.onClickingEdit}>Update Event Details</button>
       <button onClick={()=> onClickingDelete(event.id) }>Delete</button>
       <hr/>

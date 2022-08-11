@@ -44,13 +44,18 @@ class EventControl extends React.Component {
     this.setState({selectedEvent: selectedEvent});
   }
 
+  // style = {
+  //   "margin": "auto",
+  //   "justifyContent": "center",
+  //   "alignItem": "center",
+  // }
 
   btn = {
     "backgroundColor": "#dc143c",
     "color": "white",
     "fontSize": "20px",
     "padding": "10px 60px",
-    "borderRadius": "5px",
+    "borderRadius": "25px",
     "margin": "10px 0px",
     "cursor": "pointer"
   }
@@ -64,23 +69,23 @@ render() {
       <EditEventForm
         event = {this.state.selectedEvent}
         onEditEvent = {this.handleEditingEventInList} />
-    buttonText = "View Event List";
+    buttonText = "View List";
   } else if (this.state.selectedEvent != null) {
     currentlyVisibleState = 
       <EventDetail 
         event = {this.state.selectedEvent} 
         onClickingDelete = {this.handleDeletingEvent}
         onClickingEdit = {this.handleEditClick} />
-    buttonText = "View Event List";
+    buttonText = "View List";
   } else if (this.state.formVisibleOnPage) {
     currentlyVisibleState = 
       <NewEventForm onNewEventCreation={this.handleAddingNewEventToList}  />;
-    buttonText = "View Event List";
+    buttonText = "View List";
   } else {
     currentlyVisibleState = 
       <EventList eventList={this.state.mainEventList} 
          onEventSelection={this.handleChangingSelectedEvent} />;
-    buttonText = "Buy Tickets HERE";
+    buttonText = "View Tickets HERE";
   }
 
 

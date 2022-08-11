@@ -8,6 +8,7 @@ function Header() {
         <div>
           <img src={eventImage} alt="An image of Tobin Heath in Lumen Field" class="center"/>
         </div>
+        <br />
     </React.Fragment>
   );
 }
