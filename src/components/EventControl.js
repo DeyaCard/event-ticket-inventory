@@ -80,7 +80,7 @@ render() {
     currentlyVisibleState = 
       <EventList eventList={this.state.mainEventList} 
          onEventSelection={this.handleChangingSelectedEvent} />;
-    buttonText = "Add Event";
+    buttonText = "Buy Tickets HERE";
   }
 
 

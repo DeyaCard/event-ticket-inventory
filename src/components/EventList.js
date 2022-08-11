@@ -12,7 +12,7 @@ function EventList(props){
           name={event.name}
           location={event.location}
           price={event.price}
-          gift={event.gift}
+          quantity={event.quantity}
           id={event.id}
           key={event.key}/>
       )}

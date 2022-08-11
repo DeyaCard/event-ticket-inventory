@@ -16,7 +16,7 @@ function Event(props) {
           <h3>{props.name}</h3>
           <h4>{props.location}</h4>
           <h4>${props.price}</h4>
-          <h4>{props.gift}</h4>
+          <h4>{props.quantity}</h4>
         </div>
       </div>
     </React.Fragment>
@@ -27,7 +27,7 @@ Event.propTypes = {
   name: PropTypes.string,
   location: PropTypes.string,
   price: PropTypes.number,
-  gift: PropTypes.string,
+  quantity: PropTypes.number,
   id: PropTypes.string,
   whenEventClicked: PropTypes.func
 };

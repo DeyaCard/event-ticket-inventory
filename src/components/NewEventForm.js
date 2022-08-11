@@ -11,6 +11,7 @@ function NewEventForm(props){
       name: event.target.names.value, 
       location: event.target.location.value, 
       price: event.target.price.value, 
+      quantity: event.target.quantity.value,
       id: v4()
     });
   }
