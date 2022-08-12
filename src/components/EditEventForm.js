@@ -3,7 +3,7 @@ import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
 function EditEventForm(props){
-  // const { event } = props;
+  const { ticket_event } = props;
 
   function handleEditEventFormSubmission(event) {
     event.preventDefault();
@@ -11,8 +11,7 @@ function EditEventForm(props){
       name: event.target.name.value, 
       location: event.target.location.value, 
       price: event.target.price.value, 
-      quantity: event.target.quantity.value,
-      id: event.id
+      quantity: ticket_event.target.quantity.value,
     });
   }
 

@@ -44,11 +44,30 @@ class EventControl extends React.Component {
     this.setState({selectedEvent: selectedEvent});
   }
 
-  // style = {
-  //   "margin": "auto",
-  //   "justifyContent": "center",
-  //   "alignItem": "center",
-  // }
+  handleDeletingEvent = (id) => {
+    const newMainEventList = this.state.mainEventList.filter(event => event.id !== id);
+    this.setState({
+      mainEventList: newMainEventList,
+      selectedEvent: null
+    });
+  }
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
+  }
+
+  handleEditingEventInList = (eventToEdit) => {
+    const editedMainEventList = this.state.mainEventList
+      .filter(event => event.id !== this.state.handleChangingSelectedEvent.id)
+      .concat(eventToEdit);
+    this.setState({
+        mainEventList: editedMainEventList,
+        editing: false,
+        selectedEvent: null
+      });
+  }
+
 
   btn = {
     "backgroundColor": "#dc143c",

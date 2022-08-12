@@ -13,28 +13,29 @@ function ReusableForm(props) {
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
         <div style={formStyle}>
-        <input
-          type='text'
-          name='name'
-          placeholder='Ticket Type' />
-        <input
-          type='text'
-          name='location'
-          placeholder='Section' />
-        <input
-          type='number'
-          min='20'
-          name='price'
-          placeholder='Price' />
-        <input
-          type='number'
-          min='1'
-          name='quantity'
-          placeholder='Quantity' />
-                    </div>
+          <input
+            type='text'
+            name='name'
+            placeholder='Ticket Type' />
+          <input
+            type='text'
+            name='location'
+            placeholder='Section' />
+          <input
+            type='number'
+            min='20'
+            name='price'
+            placeholder='Price' />
+          <input
+            type='number'
+            min='1'
+            name='quantity'
+            placeholder='Quantity' />
+        </div>
 
-          <br />
-          <br />
+        <br />
+        <br />
+          
         <button style={{
           "padding": ".6em 3.5em",
           "backgroundColor": "darkblue",

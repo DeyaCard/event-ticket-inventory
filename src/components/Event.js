@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Event(props) {
-  const myStyledComponentStyles = {
+  const myStyles = {
     backgroundColor: '#000080',
     color: "white",
     fontFamily: 'Verdana',
@@ -11,7 +11,7 @@ function Event(props) {
   }
   return (
     <React.Fragment>
-      <div style={myStyledComponentStyles}>
+      <div style={myStyles}>
         <div onClick = {() => props.whenEventClicked(props.id)}>
           <h3>{props.name}</h3>
           <h4>{props.location}</h4>

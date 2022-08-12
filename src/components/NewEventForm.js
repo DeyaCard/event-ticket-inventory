@@ -8,7 +8,7 @@ function NewEventForm(props){
   function handleNewEventFormSubmission(event) {
     event.preventDefault();
     props.onNewEventCreation({
-      name: event.target.names.value, 
+      name: event.target.name.value, 
       location: event.target.location.value, 
       price: event.target.price.value, 
       quantity: event.target.quantity.value,
