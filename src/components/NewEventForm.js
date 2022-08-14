@@ -15,7 +15,7 @@ function NewEventForm(props){
       name: name, 
       location: location, 
       price: price, 
-      quantity: 200,
+      quantity: 1,
       id: v4()
     });
   }

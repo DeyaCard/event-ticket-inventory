@@ -2,6 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Event(props) {
+  let buyButtonVisible = null;
+  let buttonText = null;
+
+  if (props.quantity > 0) {
+    buyButtonVisible = () => props.whenBuyClicked(props.id);
+    buttonText = "Buy Event";
+
+  }else {
+    buttonText = "Event Sold Out";
+  }
   const myStyles = {
     backgroundColor: '#000080',
     color: "white",
@@ -9,6 +19,8 @@ function Event(props) {
     paddingTop: '5px',
     padding: '20px'
   }
+
+
   return (
     <React.Fragment>
       <div style={myStyles}>
@@ -17,7 +29,9 @@ function Event(props) {
           <h4>{props.location}</h4>
           <h4>${props.price}</h4>
           <h4>{props.quantity}</h4>
+          <h4>Tickets Left: {props.quantity}</h4>
         </div>
+          <button onClick = {buyButtonVisible}>{buttonText}</button>
       </div>
     </React.Fragment>
   );
@@ -29,7 +43,8 @@ Event.propTypes = {
   price: PropTypes.number,
   quantity: PropTypes.number,
   id: PropTypes.string,
-  whenEventClicked: PropTypes.func
+  whenEventClicked: PropTypes.func,
+  whenBuyClicked: PropTypes.func,
 };
 
 export default Event;
