@@ -3,13 +3,13 @@ import Event from "./Event";
 import PropTypes from "prop-types";
 
 function EventList(props){
-  
   return (
     <React.Fragment>
       <hr/>
       {props.eventList.map((event) =>
         <Event
           whenEventClicked = {props.onEventSelection}
+          whenBuyClicked = {props.onClickingBuy}
           name={event.name}
           location={event.location}
           price={event.price}

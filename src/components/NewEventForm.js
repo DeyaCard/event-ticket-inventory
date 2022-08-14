@@ -4,14 +4,18 @@ import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 
 function NewEventForm(props){
-
   function handleNewEventFormSubmission(event) {
     event.preventDefault();
+    const name = !event.target.name.value ? "General Admission" : event.target.name.value;
+    const location = !event.target.location.value ? "North End" : event.target.location.value;
+    const price = !event.target.price.value ? 20 : parseInt(event.target.price.value);
+
+
     props.onNewEventCreation({
-      name: event.target.name.value, 
-      location: event.target.location.value, 
-      price: event.target.price.value, 
-      quantity: event.target.quantity.value,
+      name: name, 
+      location: location, 
+      price: price, 
+      quantity: 200,
       id: v4()
     });
   }

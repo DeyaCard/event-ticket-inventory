@@ -6,7 +6,6 @@ import EditEventForm from "./EditEventForm";
 
 
 class EventControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -44,6 +43,22 @@ class EventControl extends React.Component {
     this.setState({selectedEvent: selectedEvent});
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingEventInList = (eventToEdit) => {
+    const index = this.state.mainEventList.indexOf(this.state.selectedEvent);
+    let editedMainEventList = this.state.mainEventList
+      .filter((event) => event.id !== this.state.handleChangingSelectedEvent.id)
+      editedMainEventList.splice(index, 0, eventToEdit);
+      this.setState({
+        mainEventList: editedMainEventList,
+        editing: false,
+        selectedEvent: null
+      });
+  }
+
   handleDeletingEvent = (id) => {
     const newMainEventList = this.state.mainEventList.filter(event => event.id !== id);
     this.setState({
@@ -52,16 +67,34 @@ class EventControl extends React.Component {
     });
   }
 
-  handleEditClick = () => {
-    console.log("handleEditClick reached!");
-    this.setState({editing: true});
+  handleBuyingEventTicket = (id) => {
+    const selectedItem = this.state.mainEventList.filter(
+      (event) => event.id === id
+    )[0];
+    const index = this.state.mainEventList.indexOf(selectedItem);
+    selectedItem.quantity -= 1;
+
+    let editedMainEventList = this.state.mainEventList
+      .filter((event) => event.id !== id);
+      editedMainEventList.splice(index, 0, selectedItem);
+      this.setState({
+        mainEventList: editedMainEventList,
+        editing: false,
+        selectedEvent: null
+      });
   }
 
-  handleEditingEventInList = (eventToEdit) => {
-    const editedMainEventList = this.state.mainEventList
-      .filter(event => event.id !== this.state.handleChangingSelectedEvent.id)
-      .concat(eventToEdit);
-    this.setState({
+  handleRestockClick = (id) => {
+    const selectedItem = this.state.mainEventList.filter(
+      (event) => event.id === id
+    )[0];
+    const index = this.state.mainEventList.indexOf(selectedItem);
+    selectedItem.quantity += 200;
+
+    let editedMainEventList = this.state.mainEventList
+      .filter((event) => event.id !== id);
+      editedMainEventList.splice(index, 0, selectedItem);
+      this.setState({
         mainEventList: editedMainEventList,
         editing: false,
         selectedEvent: null
@@ -94,7 +127,8 @@ render() {
       <EventDetail 
         event = {this.state.selectedEvent} 
         onClickingDelete = {this.handleDeletingEvent}
-        onClickingEdit = {this.handleEditClick} />
+        onClickingEdit = {this.handleEditClick} 
+        onClickingRestock = {this.handleRestockClick}/>
     buttonText = "View List";
   } else if (this.state.formVisibleOnPage) {
     currentlyVisibleState = 
@@ -102,9 +136,11 @@ render() {
     buttonText = "View List";
   } else {
     currentlyVisibleState = 
-      <EventList eventList={this.state.mainEventList} 
-         onEventSelection={this.handleChangingSelectedEvent} />;
-    buttonText = "View Tickets HERE";
+      <EventList 
+        eventList = {this.state.mainEventList} 
+        onEventSelection = {this.handleChangingSelectedEvent} 
+        onClickingBuy = {this.handleBuyingEventTicket}/>;
+    buttonText = "Add New Tickets HERE";
   }
 
 
