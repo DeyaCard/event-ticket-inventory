@@ -9,13 +9,14 @@ function NewEventForm(props){
     const name = !event.target.name.value ? "General Admission" : event.target.name.value;
     const location = !event.target.location.value ? "North End" : event.target.location.value;
     const price = !event.target.price.value ? 20 : parseInt(event.target.price.value);
+    const quantity = !event.target.quantity.value ? "50" : parseInt(event.target.quantity.value);
 
 
     props.onNewEventCreation({
       name: name, 
       location: location, 
       price: price, 
-      quantity: 1,
+      quantity: quantity,
       id: v4()
     });
   }

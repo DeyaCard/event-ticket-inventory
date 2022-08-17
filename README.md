@@ -10,6 +10,8 @@ This application was built with React and tracks the ticket inventory of a local
 * JavaScript
 * HTML
 * NPM
+* 
+* 
 
 
 

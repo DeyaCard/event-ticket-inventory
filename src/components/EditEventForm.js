@@ -25,7 +25,8 @@ function EditEventForm(props){
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleEditEventFormSubmission}
-        buttonText="Update Event Ticket" />
+        buttonText="Update Event Ticket"
+      />
     </React.Fragment>
   )
 }

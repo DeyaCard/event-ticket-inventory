@@ -32,10 +32,10 @@ function ReusableForm(props) {
             name='quantity'
             placeholder='Quantity' />
         </div>
-
-        <br />
-        <br />
           
+        <br />
+        <br />
+
         <button style={{
           "padding": ".6em 3.5em",
           "backgroundColor": "darkblue",

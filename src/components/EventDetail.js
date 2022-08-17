@@ -9,9 +9,9 @@ function EventDetail(props) {
       <h1> Event Details </h1>
       <h3>Ticket type: {event.name}</h3>
       <h3>Section: {event.location}</h3>
-      <h4>Tickets left: {event.quantity} </h4>
+      <h3>Tickets left: {event.quantity} </h3>
       <h3>Cost: ${event.price}</h3>
-      <h3> Quantity: {event.quantity}</h3>
+      {/* <h3> Quantity: {event.quantity}</h3> */}
       <button onClick={ props.onClickingEdit}>Edit Event Details</button>
       <button onClick={()=> onClickingDelete(event.id) }>Delete</button>
       <button onClick={() => props.onClickingRestock(event.id)}> Restock</button>

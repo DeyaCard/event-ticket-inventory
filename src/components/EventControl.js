@@ -32,6 +32,7 @@ class EventControl extends React.Component {
 
   handleAddingNewEventToList = (newEvent) => {
     const newMainEventList = this.state.mainEventList.concat(newEvent);
+    console.log (newMainEventList)
     this.setState({
       mainEventList: newMainEventList,
       formVisibleOnPage: false
@@ -50,7 +51,7 @@ class EventControl extends React.Component {
   handleEditingEventInList = (eventToEdit) => {
     const index = this.state.mainEventList.indexOf(this.state.selectedEvent);
     let editedMainEventList = this.state.mainEventList
-      .filter((event) => event.id !== this.state.handleChangingSelectedEvent.id)
+      .filter((event) => event.id !== eventToEdit.id)
       editedMainEventList.splice(index, 0, eventToEdit);
       this.setState({
         mainEventList: editedMainEventList,
@@ -89,7 +90,7 @@ class EventControl extends React.Component {
       (event) => event.id === id
     )[0];
     const index = this.state.mainEventList.indexOf(selectedItem);
-    selectedItem.quantity += 200;
+    selectedItem.quantity = 50;
 
     let editedMainEventList = this.state.mainEventList
       .filter((event) => event.id !== id);
@@ -119,8 +120,9 @@ render() {
   if (this.state.editing) {
     currentlyVisibleState = 
       <EditEventForm
-        event = {this.state.selectedEvent}
-        onEditEvent = {this.handleEditingEventInList} />
+        eventTicket = {this.state.selectedEvent}
+        onEditEvent = {this.handleEditingEventInList} 
+      />
     buttonText = "View List";
   } else if (this.state.selectedEvent != null) {
     currentlyVisibleState = 
@@ -128,18 +130,21 @@ render() {
         event = {this.state.selectedEvent} 
         onClickingDelete = {this.handleDeletingEvent}
         onClickingEdit = {this.handleEditClick} 
-        onClickingRestock = {this.handleRestockClick}/>
+        onClickingRestock = {this.handleRestockClick}
+      />
     buttonText = "View List";
   } else if (this.state.formVisibleOnPage) {
     currentlyVisibleState = 
-      <NewEventForm onNewEventCreation={this.handleAddingNewEventToList}  />;
+      <NewEventForm onNewEventCreation={this.handleAddingNewEventToList}  
+      />;
     buttonText = "View List";
   } else {
     currentlyVisibleState = 
       <EventList 
         eventList = {this.state.mainEventList} 
         onEventSelection = {this.handleChangingSelectedEvent} 
-        onClickingBuy = {this.handleBuyingEventTicket}/>;
+        onClickingBuy = {this.handleBuyingEventTicket}
+        />;
     buttonText = "Add New Tickets HERE";
   }
 

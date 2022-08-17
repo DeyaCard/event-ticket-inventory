@@ -8,8 +8,8 @@ function EventList(props){
       <hr/>
       {props.eventList.map((event) =>
         <Event
-          whenEventClicked = {props.onEventSelection}
-          whenBuyClicked = {props.onClickingBuy}
+          whenEventClicked={props.onEventSelection}
+          whenBuyClicked={props.onClickingBuy}
           name={event.name}
           location={event.location}
           price={event.price}
