@@ -17,7 +17,8 @@ function Event(props) {
     color: "white",
     fontFamily: 'Verdana',
     paddingTop: '5px',
-    padding: '20px'
+    padding: '20px',
+    margin: '10px'
   }
 
 
