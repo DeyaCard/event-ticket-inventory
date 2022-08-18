@@ -28,7 +28,7 @@ function Event(props) {
           <h3>{props.name}</h3>
           <h4>{props.location}</h4>
           <h4>${props.price}</h4>
-          {/* <h4>{props.quantity}</h4> */}
+          <h4>{props.quantity}</h4>
           <h4>Tickets Left: {props.quantity}</h4>
         </div>
           <button onClick = {buyButtonVisible}>{buttonText}</button>

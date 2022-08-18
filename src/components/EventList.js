@@ -9,13 +9,14 @@ function EventList(props){
       {props.eventList.map((event) =>
         <Event
           whenEventClicked={props.onEventSelection}
-          whenBuyClicked={props.onClickingBuy}
           name={event.name}
           location={event.location}
           price={event.price}
           quantity={event.quantity}
           id={event.id}
-          key={event.key}/>
+          key={event.key}
+          whenBuyClicked={props.onClickingBuy}
+        />
       )}
     </React.Fragment>
   );
