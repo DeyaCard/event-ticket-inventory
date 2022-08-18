@@ -6,11 +6,11 @@ function EventDetail(props) {
 
   return (
     <React.Fragment>
-      <h1> Event Details </h1>
+      <h1>Event Details</h1>
       <h3>Ticket type: {event.name}</h3>
       <h3>Section: {event.location}</h3>
       <h3>Cost: ${event.price}</h3>
-      <h3> Quantity: {event.quantity}</h3>
+      <h3>Quantity: {event.quantity}</h3>
       <h3>Tickets left: {event.quantity} </h3>
 
       <button onClick={ props.onClickingEdit}>Edit Event Details</button>

@@ -9,7 +9,7 @@ function NewEventForm(props){
     const name = !event.target.name.value ? "General Admission" : event.target.name.value;
     const location = !event.target.location.value ? "North End" : event.target.location.value;
     const price = !event.target.price.value ? 20 : parseInt(event.target.price.value);
-    const quantity = !event.target.quantity.value ? 2 : event.target.quantity.value;
+    const quantity = !event.target.quantity.value ? 2 : parseInt(event.target.quantity.value);
 
 
     props.onNewEventCreation({

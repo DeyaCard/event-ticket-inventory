@@ -32,7 +32,6 @@ class EventControl extends React.Component {
 
   handleAddingNewEventToList = (newEvent) => {
     const newMainEventList = this.state.mainEventList.concat(newEvent);
-    console.log (newMainEventList)
     this.setState({
       mainEventList: newMainEventList,
       formVisibleOnPage: false
@@ -69,8 +68,7 @@ class EventControl extends React.Component {
   }
 
   handleBuyingEventTicket = (id) => {
-    const selectedItem = this.state.mainEventList.filter(
-      (event) => event.id === id
+    const selectedItem = this.state.mainEventList.filter((event) => event.id === id
     )[0];
     const index = this.state.mainEventList.indexOf(selectedItem);
     selectedItem.quantity -= 1;

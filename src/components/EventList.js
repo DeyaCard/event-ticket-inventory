@@ -13,6 +13,7 @@ function EventList(props){
           location={event.location}
           price={event.price}
           quantity={event.quantity}
+          ticketsLeft={event.ticketsLeft}
           id={event.id}
           key={event.key}
           whenBuyClicked={props.onClickingBuy}
