@@ -15,7 +15,7 @@ function Event(props) {
   const myStyles = {
     backgroundColor: '#000080',
     color: "white",
-    fontFamily: 'Verdana',
+    fontFamily: 'sans-serif',
     paddingTop: '5px',
     padding: '20px',
     margin: '10px',
